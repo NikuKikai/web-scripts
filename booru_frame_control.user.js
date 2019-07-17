@@ -2,7 +2,7 @@
 // @name         booru frame control
 // @namespace    https://github.com/KisaragiAyano/web-scripts
 // @version      0.1
-// @description  try to take over the world!
+// @description  Use button below the player or press 'd'/ 'f' (just like potplayer) when the player focused to play the video frame by frame.
 // @author       Niku Kikai
 // @match        https://www.sakugabooru.com/post/show/*
 // @grant        none
