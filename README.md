@@ -8,7 +8,11 @@ Use
 
 or
 
-- press 'd'/ 'f' (just like potplayer) when the player focused
+- mouse wheel
+
+or
+
+- press 'D'/'d'/'f'/'F' when the player focused
 
 to play the video frame by frame.
 
