@@ -2,7 +2,7 @@
 // @name         sakugabooru preview
 // @namespace    https://github.com/KisaragiAyano/web-scripts
 // @version      0.1
-// @description
+// @description  Preview sukugabooru video like pXXXhub.
 // @author       Niku Kikai
 // @match        https://www.sakugabooru.com/post
 // @match        https://www.sakugabooru.com/post?*
