@@ -15,31 +15,32 @@ function foo(){
     var video = document.createElement("VIDEO");
     video.style.position = "relative";
     video.style.top = "0";
-    video.autoplay = "false";
+    video.autoplay = "true";
+    video.muted = "true";
     video.loop = "true";
     video.onerror = _onerror;
 
-    var posts = document.getElementById("post-list-posts");
-    console.log(posts);
-
-    var thumbs = posts.getElementsByClassName("thumb");
-    for (var i = 0; i < thumbs.length; i++) {
-        var thumb = thumbs[i];
-        var preview_img = thumb.getElementsByClassName("preview")[0];
-
-        thumb.addEventListener('mouseenter', _mouseenter);
-        thumb.addEventListener('mouseleave', _mouseleave);
+    var posts = document.getElementById("post-list-posts").children;
+    var formats = ['mp4','mkv','webm'];
+    for (var i = 0; i < posts.length; i++) {
+        var thumb = posts[i].getElementsByClassName("thumb")[0];
+        var direct_link = posts[i].getElementsByClassName("directlink")[0];
+        var splitted_url = direct_link.href.split(".");
+        if (formats.indexOf(splitted_url[splitted_url.length-1]) > -1) {
+            thumb.addEventListener('mouseenter', _mouseenter);
+            thumb.addEventListener('mouseleave', _mouseleave);
+        }
     }
 
     function _mouseenter(e){
         var thumb = e.srcElement;
-        var preview_img = thumb.getElementsByClassName("preview")[0];
+        let preview_img = thumb.getElementsByClassName("preview")[0];
         video.width = preview_img.width;
         video.height = preview_img.height;
         var src = preview_img.src.substr(0, preview_img.src.length-4).replace("preview/","");
+
         video.src = src + ".mp4";
         stop = false;
-        video.play();
         crttime = 0;
         thumb.appendChild(video);
         video.style.display = "block";
